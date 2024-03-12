@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Clock, Menu, X } from "lucide-react";
 
 import ThemeToggle from "@/components/ThemeToggle";
 import { Button } from "./ui/button";
+import DateTime from "./DateTime";
 
 export const Header = () => {
   const [isNavOpen, setNavOpen] = useState(false);
@@ -26,18 +27,25 @@ export const Header = () => {
 
       <ThemeToggle />
 
-      {isNavOpen && <Navmenu setNavOpen={setNavOpen} />}
+      {<Navmenu setNavOpen={setNavOpen} isNavOpen={isNavOpen} />}
     </header>
   );
 };
 
 type NavmenuProps = {
+  isNavOpen: boolean;
   setNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Navmenu = ({ setNavOpen }: NavmenuProps) => {
+const Navmenu = ({ setNavOpen, isNavOpen }: NavmenuProps) => {
   return (
-    <div className="flex items-center justify-center bg-background w-full max-w-full h-screen absolute top-0 left-0 p-6 z-10">
+    <div
+      className={`flex items-center justify-center bg-background w-full max-w-full h-screen absolute top-0 left-0 p-6 ${
+        isNavOpen
+          ? "opacity-1 z-20 transition-opacity duration-300"
+          : "opacity-0 -z-20 transition-opacity duration-300"
+      }`}
+    >
       <div>
         <nav className="h-fit">
           <ul className="flex flex-col gap-y-6 md:gap-y-12">

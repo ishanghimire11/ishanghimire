@@ -2,9 +2,9 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="py-40 md:py-48">
+    <section className="py-20 md:py-32 2xl:py-40">
       <div className="max-w-[80em]">
-        <h1 className="text-6xl sm:text-7xl md:text-8xl pb-4 sm:pb-6 lg:pb-12 lg:text-9xl">
+        <h1 className="text-6xl sm:text-7xl md:text-8xl pb-4 sm:pb-6 lg:pb-12 lg:text-9xl 2xl:text-[10rem] max-w-[50rem]">
           Fullstack Developer
         </h1>
         <p className="max-w-[700px] text-md sm:text-lg md:text-xl lg:text-2xl tracking-wide">
