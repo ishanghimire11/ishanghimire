@@ -1,4 +1,4 @@
-export const contents = [
+export const timelineContents = [
   {
     title: "Web Developer",
     subtitle: "Ecobees Intelligence",
